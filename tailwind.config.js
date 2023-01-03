@@ -8,6 +8,8 @@ module.exports = {
         Beautiste: ["Beautiste", "sans-serif"],
       },
       colors: {
+        cardOverlay: "rgba(256,256,256,0.4)",
+        lighttextgray: '#9ca0ab',
         primary: {
           1: "#EBF9FF", // Light Blue | Blue +3
           2: "#75D2F6", // Medium Blue | Blue +2
