@@ -1,4 +1,4 @@
-import I1 from '../assest/img/i1.png'
+import I1 from "../assest/img/i1.png";
 import C3 from "../assest/img/c3.png";
 import F1 from "../assest/img/f1.png";
 import Fi1 from "../assest/img/fi1.png";
@@ -31,5 +31,48 @@ export const heroData = [
     desc: "Fish Kebbab",
     price: "8000",
     imgSrc: Fi1,
+  },
+];
+
+export const categories = [
+  {
+    id: 1,
+    name: "Soups",
+    urlParamName: "soups",
+  },
+  {
+    id: 2,
+    name: "Curry",
+    urlParamName: "curry",
+  },
+  {
+    id: 3,
+    name: "Egusi",
+    urlParamName: "egusi",
+  },
+  {
+    id: 4,
+    name: "Abacha",
+    urlParamName: "abacha",
+  },
+  {
+    id: 5,
+    name: "Rice",
+    urlParamName: "rice",
+  },
+  {
+    id: 6,
+    name: "Pizza",
+    urlParamName: "pizza",
+  },
+  {
+    id: 7,
+    name: "Shawarma",
+    urlParamName: "shawarma",
+  },
+  {
+    id: 8,
+    name: "Drinks",
+    urlParamName: "drinks",
   },
 ];

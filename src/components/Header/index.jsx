@@ -45,7 +45,7 @@ const Header = () => {
       <div className="hidden md:flex w-full  h-full items-center justify-between">
         <Link to="/" className="flex items-center justify-center">
           <span className="text-[24px] font-bold text-primary-8">
-            Ifeanyi Resturant App
+            Ifeanyi Restaurant App
           </span>
         </Link>
 

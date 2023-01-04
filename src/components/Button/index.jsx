@@ -45,7 +45,7 @@ const Button = ({
     case "alt":
       textColor = "text-white";
       textColorHover = "hover:text-white";
-      bgColor = "bg-[#00ADEE]";
+      bgColor = "bg-red-500";
       bgColorHover = "hover:bg-primary-8";
       break;
     default:
