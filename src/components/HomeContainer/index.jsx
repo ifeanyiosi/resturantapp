@@ -5,6 +5,7 @@ import chicken from "../../assest/img/chicken.avif";
 import I1 from "../../assest/img/i1.png";
 import salad from "../../assest/img/salad.avif";
 import Button from "../Button";
+import { heroData } from "../../utils/data";
 
 const HomeContainer = () => {
   return (
@@ -47,20 +48,30 @@ const HomeContainer = () => {
           src={heroBg}
           alt="hero"
         />
-        <div className="h-full w-full absolute top-0 left-0 px-32 py-4 flex items-center justify-center ">
-          <div className="w-[190px] p-4 bg-cardOverlay backdrop-blur-md rounded-3xl flex flex-col items-center justify-center">
-            <img className="w-40 -mt-20 rounded-2xl" src={I1} alt="" />
-            <p className="text-xl font-semibold text-primary-8 mt-4">
-              IceCream
-            </p>
-            <p className="text-sm mt-2 text-center  text-lighttextgray font-semibold">
-              Chocolate & Vanilla Flavour
-            </p>
-            <p className="text-sm font-semibold text-primary-8">
-              {" "}
-              <span className="text-xs text-red-600">₦ </span>5,000
-            </p>
-          </div>
+        <div className="h-full w-full absolute top-0 lg:px-32 left-0  py-4 gap-4 flex-wrap flex items-center justify-center  drop-shadow-lg">
+          {heroData.map((n) => (
+            <div
+              key={n.id}
+              className="lg:w-[190px]  p-4 bg-cardOverlay backdrop-blur-md rounded-3xl flex flex-col items-center justify-center"
+            >
+              <img
+                className="lg:w-40 w-20 lg:-mt-20 -mt-10 rounded-2xl"
+                src={n.imgSrc}
+                alt=""
+              />
+              <p className="lg:text-xl text-base font-semibold text-primary-8 lg:mt-4">
+                {n.name}
+              </p>
+              <p className="lg:text-sm text-[10px] lg:my-3 my-1 text-center  text-lighttextgray font-semibold">
+                {n.desc}
+              </p>
+              <p className="text-sm font-semibold text-primary-8">
+                {" "}
+                <span className="text-xs text-red-600">₦ </span>
+                {n.price}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

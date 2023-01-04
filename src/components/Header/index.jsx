@@ -93,7 +93,10 @@ const Header = () => {
               >
                 {user && user.email === "ifeanyi.osi.okeke@gmail.com" && (
                   <Link to="/createItem">
-                    <p className="px-4 py-2  flex items-center gap-3 cursor-pointer hover:bg-slate-200 transition-all duration-100 ease-in-out text-primary-8 text-base">
+                    <p
+                      onClick={() => setMenu(false)}
+                      className="px-4 py-2  flex items-center gap-3 cursor-pointer hover:bg-slate-200 transition-all duration-100 ease-in-out text-primary-8 text-base"
+                    >
                       New Item <IoMdAdd />
                     </p>
                   </Link>
@@ -138,22 +141,37 @@ const Header = () => {
             >
               {user && user.email === "ifeanyi.osi.okeke@gmail.com" && (
                 <Link to="/createItem">
-                  <p className="px-4 py-2  flex items-center gap-3 cursor-pointer hover:bg-slate-200 transition-all duration-100 ease-in-out text-primary-8 text-base">
+                  <p
+                    className="px-4 py-2  flex items-center gap-3 cursor-pointer hover:bg-slate-200 transition-all duration-100 ease-in-out text-primary-8 text-base "
+                    onClick={() => setMenu(false)}
+                  >
                     New Item <IoMdAdd />
                   </p>
                 </Link>
               )}
               <ul className="flex flex-col  ">
-                <li className="text-[16px] text-primary-9 cursor-pointer hover:text-primary-7 duration-100 transition-all ease-in-out hover:bg-slate-200 px-4 py-2">
+                <li
+                  onClick={() => setMenu(false)}
+                  className="text-[16px] text-primary-9 cursor-pointer hover:text-primary-7 duration-100 transition-all ease-in-out hover:bg-slate-200 px-4 py-2"
+                >
                   Home
                 </li>
-                <li className="text-[16px] text-primary-9 cursor-pointer hover:text-primary-7 duration-100 transition-all ease-in-out hover:bg-slate-200 px-4 py-2">
+                <li
+                  onClick={() => setMenu(false)}
+                  className="text-[16px] text-primary-9 cursor-pointer hover:text-primary-7 duration-100 transition-all ease-in-out hover:bg-slate-200 px-4 py-2"
+                >
                   Menu
                 </li>
-                <li className="text-[16px] text-primary-9 cursor-pointer hover:text-primary-7 duration-100 transition-all ease-in-out hover:bg-slate-200 px-4 py-2">
+                <li
+                  onClick={() => setMenu(false)}
+                  className="text-[16px] text-primary-9 cursor-pointer hover:text-primary-7 duration-100 transition-all ease-in-out hover:bg-slate-200 px-4 py-2"
+                >
                   About Us
                 </li>
-                <li className="text-[16px] text-primary-9 cursor-pointer hover:text-primary-7 duration-100 transition-all ease-in-out hover:bg-slate-200 px-4 py-2">
+                <li
+                  onClick={() => setMenu(false)}
+                  className="text-[16px] text-primary-9 cursor-pointer hover:text-primary-7 duration-100 transition-all ease-in-out hover:bg-slate-200 px-4 py-2"
+                >
                   Service
                 </li>
               </ul>
