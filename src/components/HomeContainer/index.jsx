@@ -1,8 +1,8 @@
 import React from "react";
 import rider from "../../assest/img/rider.jpeg";
-import hero from "../../assest/img/hero.avif";
+import heroBg from "../../assest/img/heroBg.png";
 import chicken from "../../assest/img/chicken.avif";
-import icecream from "../../assest/img/icecream.avif";
+import I1 from "../../assest/img/i1.png";
 import salad from "../../assest/img/salad.avif";
 import Button from "../Button";
 
@@ -25,7 +25,7 @@ const HomeContainer = () => {
             />
           </div>
         </div>
-        <p className="text-[2.5rem] lg:text-[4.25rem] font-bold tracking-normal text-primary-8 ">
+        <p className="text-[2.5rem] lg:text-[4.25rem] p-0 m-0 font-bold tracking-tight  text-primary-8 ">
           The Fastest Delivery in{" "}
           <span className="text-orange-600 text-[3rem] lg:text-[5rem]">
             Your City
@@ -44,15 +44,17 @@ const HomeContainer = () => {
       <div className="py-2 relative flex-1">
         <img
           className="h-[370px] w-full lg:w-auto lg:h-[650px] ml-auto top-0 right-16 rounded-xl"
-          src={hero}
+          src={heroBg}
           alt="hero"
         />
         <div className="h-full w-full absolute top-0 left-0 px-32 py-4 flex items-center justify-center ">
           <div className="w-[190px] p-4 bg-cardOverlay backdrop-blur-md rounded-3xl flex flex-col items-center justify-center">
-            <img className="w-40 h-[180px] rounded-2xl" src={icecream} alt="" />
-            <p className="text-base font-semibold text-primary-8">IceCream</p>
-            <p className="text-sm my-3   text-lighttextgray font-semibold">
-              Chocolate Flavour
+            <img className="w-40 -mt-20 rounded-2xl" src={I1} alt="" />
+            <p className="text-xl font-semibold text-primary-8 mt-4">
+              IceCream
+            </p>
+            <p className="text-sm mt-2 text-center  text-lighttextgray font-semibold">
+              Chocolate & Vanilla Flavour
             </p>
             <p className="text-sm font-semibold text-primary-8">
               {" "}
