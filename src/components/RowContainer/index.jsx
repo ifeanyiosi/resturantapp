@@ -9,15 +9,17 @@ const RowContainer = ({ flag, data }) => {
   const [{ foodItems }, dispatch] = useStateValue();
   return (
     <div
-      className={`w-full my-12  ${
-        flag ? "overflow-x-scroll" : "overflow-x-hidden"
+      className={`w-full my-12 flex items-center gap-3 ${
+        flag
+          ? "overflow-x-scroll scrollbar-none"
+          : "overflow-x-hidden flex-wrap"
       } `}
     >
       {data &&
         data.map((item) => (
           <div
             key={item.id}
-            className="w-[300px] my-12 md:w-[340px] bg-cardOverlay rounded-lg h-auto backdrop-blur-lg hover:drop-shadow-lg"
+            className="w-[300px] min-w-[300px] md:min-w-[340px] my-12 md:w-[340px]  bg-cardOverlay rounded-lg h-auto backdrop-blur-lg hover:drop-shadow-lg"
           >
             <div className="w-full flex items-center justify-between">
               <motion.img

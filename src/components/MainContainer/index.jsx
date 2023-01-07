@@ -31,7 +31,7 @@ const MainContainer = () => {
             </motion.div>
           </div>
         </div>
-        <RowContainer flag={true} data={foodItems?.filter(n => n.category === 'fruits')} />
+        <RowContainer flag={false} data={foodItems?.filter(n => n.category === 'fruits')} />
       </section>
     </div>
   );
