@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 import HomeContainer from "../HomeContainer";
 import RowContainer from "../RowContainer";
 import { useStateValue } from "../../conntext/StateProvider";
+import { MenuContainer } from "..";
 
 const MainContainer = () => {
   const [{ foodItems }, dispatch] = useStateValue();
+  const [scrollValue, setScrollValue] = useState(0);
+
+  useEffect(() => {}, [scrollValue]);
+
   return (
     <div className="gw-full h-auto flex flex-col items-center justify-center overflow-x-hidden">
       <HomeContainer />
@@ -18,12 +23,14 @@ const MainContainer = () => {
           </p>
           <div className="hidden md:flex items-center gap-3">
             <motion.div
+              onClick={() => setScrollValue(-200)}
               whileTap={{ scale: 0.75 }}
               className="w-8 h-8 rounded-lg bg-orange-300 hover:bg-orange-500 cursor-pointer transition-all duration-100 ease-in-out hover:shadow-lg flex items-center justify-center"
             >
               <AiOutlineLeft className="text-lg text-white" />
             </motion.div>
             <motion.div
+              onClick={() => setScrollValue(200)}
               whileTap={{ scale: 0.75 }}
               className="w-8 h-8 rounded-lg bg-orange-300 hover:bg-orange-500 cursor-pointer transition-all duration-100 ease-in-out hover:shadow-lg flex items-center justify-center"
             >
@@ -31,8 +38,13 @@ const MainContainer = () => {
             </motion.div>
           </div>
         </div>
-        <RowContainer flag={false} data={foodItems?.filter(n => n.category === 'fruits')} />
+        <RowContainer
+          scrollValue={scrollValue}
+          flag={true}
+          data={foodItems?.filter((n) => n.category === "fruits")}
+        />
       </section>
+      <MenuContainer />
     </div>
   );
 };
