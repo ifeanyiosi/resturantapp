@@ -47,8 +47,8 @@ export const categories = [
   },
   {
     id: 3,
-    name: "Egusi",
-    urlParamName: "egusi",
+    name: "Rice",
+    urlParamName: "rice",
   },
   {
     id: 4,
@@ -57,13 +57,13 @@ export const categories = [
   },
   {
     id: 5,
-    name: "Rice",
-    urlParamName: "rice",
+    name: "Dinner",
+    urlParamName: "dinner",
   },
   {
     id: 6,
-    name: "Pizza",
-    urlParamName: "pizza",
+    name: "Fruits",
+    urlParamName: "fruits",
   },
   {
     id: 7,
@@ -74,5 +74,20 @@ export const categories = [
     id: 8,
     name: "Drinks",
     urlParamName: "drinks",
+  },
+  {
+    id: 9,
+    name: "Chicken",
+    urlParamName: "chicken",
+  },
+  {
+    id: 10,
+    name: "Snacks",
+    urlParamName: "snacks",
+  },
+  {
+    id: 11,
+    name: "Fish",
+    urlParamName: "fish",
   },
 ];

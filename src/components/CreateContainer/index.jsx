@@ -15,7 +15,9 @@ import { categories } from "../../utils/data";
 import Loader from "../Loader";
 import Button from "../Button";
 import { storage } from "../../firebase.config";
-import { saveItem } from "../../utils/firebaseFunctions";
+import { getAllFoodItems, saveItem } from "../../utils/firebaseFunctions";
+import { useStateValue } from "../../conntext/StateProvider";
+import { actionType } from "../../conntext/reducer";
 
 const CreateContainer = () => {
   const [title, setTitle] = useState("");
@@ -27,6 +29,7 @@ const CreateContainer = () => {
   const [alertStatus, setAlertStatus] = useState("danger");
   const [msg, setMsg] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [{}, dispatch] = useStateValue();
 
   const uploadImage = (e) => {
     setIsLoading(true);
@@ -80,6 +83,7 @@ const CreateContainer = () => {
         setIsLoading(false);
       }, 4000);
     });
+    fetchData();
   };
 
   const clearData = () => {
@@ -87,7 +91,16 @@ const CreateContainer = () => {
     setImageAsset(null);
     setCalories("");
     setPrice("");
-    setCalories("Select Category");
+    setCalories("");
+  };
+
+  const fetchData = async () => {
+    await getAllFoodItems().then((data) => {
+      dispatch({
+        type: actionType.SET_FOOD_ITEMS,
+        foodItems: data,
+      });
+    });
   };
 
   const saveDetails = () => {
