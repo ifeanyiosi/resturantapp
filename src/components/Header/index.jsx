@@ -14,7 +14,7 @@ const Header = () => {
   const firebaseAuth = getAuth(app);
   const provider = new GoogleAuthProvider();
 
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user, cartShow, cartItems }, dispatch] = useStateValue();
   const [menu, setMenu] = useState(false);
 
   const login = async () => {
@@ -39,13 +39,21 @@ const Header = () => {
       user: null,
     });
   };
+
+  const showCart = () => {
+    dispatch({
+      type: actionType.SET_CART_SHOW,
+      cartShow: !cartShow,
+    });
+  };
+
   return (
     <header className="fixed z-50 w-screen bg-primary-12 p-3 px-4 md:p-6 md:px-16">
       {/* desktop and tab */}
       <div className="hidden md:flex w-full  h-full items-center justify-between">
         <Link to="/" className="flex items-center justify-center">
           <span className="text-[24px] font-bold text-primary-8">
-            Ifeanyi Restaurant App
+            Ifeanyi App
           </span>
         </Link>
 
@@ -69,12 +77,19 @@ const Header = () => {
               Service
             </li>
           </motion.ul>
-          <div className="relative flex items-center justify-center">
+          <motion.div
+            onClick={showCart}
+            className="relative flex items-center justify-center"
+          >
             <HiShoppingCart className=" w-[30px] h-[30px] cursor-pointer" />
-            <div className="w-5 h-5 absolute -right-2 -top-2 rounded-full bg-accent-3 flex items-center justify-center">
-              <p className="text-sm text-white font-semibold">4</p>
-            </div>
-          </div>
+            {cartItems && cartItems.length > 0 && (
+              <div className="w-5 h-5 absolute -right-2 -top-2 rounded-full bg-accent-3 flex items-center justify-center">
+                <p className="text-sm text-white font-semibold">
+                  {cartItems.length}
+                </p>
+              </div>
+            )}
+          </motion.div>
 
           <div className="relative">
             <motion.img
@@ -113,11 +128,18 @@ const Header = () => {
 
       {/* mobile */}
       <div className=" md:hidden flex  justify-between items-center h-full">
-        <div className="relative flex items-center justify-center">
+        <div
+          onClick={showCart}
+          className="relative flex items-center justify-center"
+        >
           <HiShoppingCart className=" w-[30px] h-[30px] cursor-pointer" />
-          <div className="w-5 h-5 absolute -right-2 -top-2 rounded-full bg-accent-3 flex items-center justify-center">
-            <p className="text-sm text-white font-semibold">4</p>
-          </div>
+          {cartItems && cartItems.length > 0 && (
+            <div className="w-5 h-5 absolute -right-2 -top-2 rounded-full bg-accent-3 flex items-center justify-center">
+              <p className="text-sm text-white font-semibold">
+                {cartItems.length}
+              </p>
+            </div>
+          )}
         </div>
         <Link to="/" className="flex items-center justify-center">
           <span className="text-[16px] font-bold text-primary-8">

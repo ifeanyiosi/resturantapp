@@ -4,13 +4,13 @@ import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 import HomeContainer from "../HomeContainer";
 import RowContainer from "../RowContainer";
 import { useStateValue } from "../../conntext/StateProvider";
-import { MenuContainer } from "..";
+import { Cart, MenuContainer } from "..";
 
 const MainContainer = () => {
-  const [{ foodItems }, dispatch] = useStateValue();
+  const [{ foodItems, cartShow }, dispatch] = useStateValue();
   const [scrollValue, setScrollValue] = useState(0);
 
-  useEffect(() => {}, [scrollValue]);
+  useEffect(() => {}, [scrollValue, cartShow]);
 
   return (
     <div className="gw-full h-auto flex flex-col items-center justify-center overflow-x-hidden">
@@ -25,14 +25,14 @@ const MainContainer = () => {
             <motion.div
               onClick={() => setScrollValue(-200)}
               whileTap={{ scale: 0.75 }}
-              className="w-8 h-8 rounded-lg bg-orange-300 hover:bg-orange-500 cursor-pointer transition-all duration-100 ease-in-out hover:shadow-lg flex items-center justify-center"
+              className="w-8 h-8 rounded-lg bg-orange-300 hover:bg-orange-500 cursor-pointer  hover:shadow-lg flex items-center justify-center"
             >
               <AiOutlineLeft className="text-lg text-white" />
             </motion.div>
             <motion.div
               onClick={() => setScrollValue(200)}
               whileTap={{ scale: 0.75 }}
-              className="w-8 h-8 rounded-lg bg-orange-300 hover:bg-orange-500 cursor-pointer transition-all duration-100 ease-in-out hover:shadow-lg flex items-center justify-center"
+              className="w-8 h-8 rounded-lg bg-orange-300 hover:bg-orange-500 cursor-pointer  hover:shadow-lg flex items-center justify-center"
             >
               <AiOutlineRight className="text-lg text-white" />
             </motion.div>
@@ -45,6 +45,7 @@ const MainContainer = () => {
         />
       </section>
       <MenuContainer />
+      {cartShow && <Cart /> }
     </div>
   );
 };

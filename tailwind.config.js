@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         rowBg: "rgba(255,131,0,0.05)",
         cardOverlay: "rgba(256,256,256,0.4)",
+        card: "rgba(256,256,256,0.8)",
         lighttextgray: "#9ca0ab",
         primary: {
           1: "#EBF9FF", // Light Blue | Blue +3
@@ -24,6 +25,9 @@ module.exports = {
           10: "#001C3D",
           11: "#031E49", // Primary Darkest | Blue -6
           12: "#f5f3f3",
+          cardBg: "#282ac2",
+          cartItem: "#2e3033",
+          cartTotal: "#343739",
         },
         accent: {
           1: "#FFF7EB",
